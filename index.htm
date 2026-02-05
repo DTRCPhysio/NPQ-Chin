@@ -21,103 +21,114 @@ button:hover { background:#005fcc; }
 <body>
 <div class="container">
 <h1>頸痛問卷（NPQ）</h1>
-<p class="instructions">請選擇最符合您目前情況的選項。每題 0–4 分，分數越高表示頸痛影響越大。</p>
+<p class="instructions">
+我們設計本問卷的目的，是了解頸痛如何影響你應付日常生活的能力。<br>
+請回答每一個部分的問題，並在一個適當的方格內標示你的答案。<br>
+你也許會發現在同一部分內有兩種描述都適用於你，但請你只選一個方格，而這答案必須最貼切地描述你的問題。<br>
+記住：你只需在每個部分標示一個方格。（第 9 題為非必答）
+</p>
 
 <form id="npqForm">
 <table>
 <tr><th>題號</th><th>問題</th><th>回答</th></tr>
 
-<!-- Q1–Q8 (same as your original version) -->
-<tr><td>1</td><td>疼痛強度</td>
+<!-- 1 -->
+<tr><td>1</td><td>現在頸痛的程度</td>
 <td class="options">
-<label><input type="radio" name="q1" value="0"> 無痛</label>
-<label><input type="radio" name="q1" value="1"> 輕微疼痛</label>
-<label><input type="radio" name="q1" value="2"> 中度疼痛</label>
-<label><input type="radio" name="q1" value="3"> 嚴重疼痛</label>
-<label><input type="radio" name="q1" value="4"> 劇烈疼痛</label>
+<label><input type="radio" name="q1" value="0"> 沒有頸痛</label>
+<label><input type="radio" name="q1" value="1"> 溫和</label>
+<label><input type="radio" name="q1" value="2"> 中等</label>
+<label><input type="radio" name="q1" value="3"> 很嚴重</label>
+<label><input type="radio" name="q1" value="4"> 簡直不可想像</label>
 </td></tr>
 
-<tr><td>2</td><td>個人照護（如穿衣、洗澡）</td>
+<!-- 2 -->
+<tr><td>2</td><td>頸痛與睡眠</td>
 <td class="options">
-<label><input type="radio" name="q2" value="0"> 無困難</label>
-<label><input type="radio" name="q2" value="1"> 有些困難</label>
-<label><input type="radio" name="q2" value="2"> 中度困難</label>
-<label><input type="radio" name="q2" value="3"> 需要協助</label>
-<label><input type="radio" name="q2" value="4"> 完全無法自行完成</label>
+<label><input type="radio" name="q2" value="0"> 頸痛從不干擾我睡眠</label>
+<label><input type="radio" name="q2" value="1"> 頸痛有時會干擾我睡眠</label>
+<label><input type="radio" name="q2" value="2"> 頸痛經常會干擾我睡眠</label>
+<label><input type="radio" name="q2" value="3"> 頸痛使我每晚的睡眠時間少過五小時</label>
+<label><input type="radio" name="q2" value="4"> 頸痛使我每晚的睡眠時間少過兩小時</label>
 </td></tr>
 
-<tr><td>3</td><td>提舉物品</td>
+<!-- 3 -->
+<tr><td>3</td><td>手臂在夜晚感到發麻或有刺般的情況</td>
 <td class="options">
-<label><input type="radio" name="q3" value="0"> 可提重物</label>
-<label><input type="radio" name="q3" value="1"> 可提中等重量</label>
-<label><input type="radio" name="q3" value="2"> 只能提輕物</label>
-<label><input type="radio" name="q3" value="3"> 幾乎無法提物</label>
-<label><input type="radio" name="q3" value="4"> 完全無法提物</label>
+<label><input type="radio" name="q3" value="0"> 我在夜晚從不感到手臂發麻或有刺般的感覺</label>
+<label><input type="radio" name="q3" value="1"> 我有時在夜晚感到手臂發麻或有刺般的感覺</label>
+<label><input type="radio" name="q3" value="2"> 我經常在夜晚感到手臂發麻或有刺般的感覺</label>
+<label><input type="radio" name="q3" value="3"> 我在夜晚感到手臂發麻或有刺般的感覺使我睡眠時間少過五小時</label>
+<label><input type="radio" name="q3" value="4"> 我在夜晚感到手臂發麻或有刺般的感覺使我每晚的睡眠時間少過兩小時</label>
 </td></tr>
 
-<tr><td>4</td><td>閱讀</td>
+<!-- 4 -->
+<tr><td>4</td><td>每天症狀持續的時間</td>
 <td class="options">
-<label><input type="radio" name="q4" value="0"> 閱讀無困難</label>
-<label><input type="radio" name="q4" value="1"> 閱讀稍有困難</label>
-<label><input type="radio" name="q4" value="2"> 閱讀中度困難</label>
-<label><input type="radio" name="q4" value="3"> 閱讀非常困難</label>
-<label><input type="radio" name="q4" value="4"> 完全無法閱讀</label>
+<label><input type="radio" name="q4" value="0"> 我的頸部和手臂整天都覺得正常</label>
+<label><input type="radio" name="q4" value="1"> 我的頸部和手臂有時會有不適的症狀，但不超過一小時</label>
+<label><input type="radio" name="q4" value="2"> 我的頸部和手臂有時會有不適的症狀，總共持續一至四小時</label>
+<label><input type="radio" name="q4" value="3"> 我的頸部和手臂有時會有不適的症狀，總共持續超過四小時</label>
+<label><input type="radio" name="q4" value="4"> 我的頸部和手臂的症狀持續得很長，整天都有</label>
 </td></tr>
 
-<tr><td>5</td><td>頭痛</td>
+<!-- 5 -->
+<tr><td>5</td><td>攜帶物件</td>
 <td class="options">
-<label><input type="radio" name="q5" value="0"> 無頭痛</label>
-<label><input type="radio" name="q5" value="1"> 偶爾頭痛</label>
-<label><input type="radio" name="q5" value="2"> 經常頭痛</label>
-<label><input type="radio" name="q5" value="3"> 頭痛嚴重</label>
-<label><input type="radio" name="q5" value="4"> 頭痛非常嚴重</label>
+<label><input type="radio" name="q5" value="0"> 我可攜帶重物（5公斤或以上）而不感到額外的痛楚</label>
+<label><input type="radio" name="q5" value="1"> 我可攜帶重物（5公斤或以上），但這令我感到額外的痛楚</label>
+<label><input type="radio" name="q5" value="2"> 我無法全程攜帶重物，但若物件的重量中等（約2–3公斤），我便可以應付</label>
+<label><input type="radio" name="q5" value="3"> 我只可以攜帶輕的物件（2公斤以下）</label>
+<label><input type="radio" name="q5" value="4"> 我甚麼東西都拿不起來</label>
 </td></tr>
 
-<tr><td>6</td><td>專注力</td>
+<!-- 6 -->
+<tr><td>6</td><td>閱讀及看電視</td>
 <td class="options">
-<label><input type="radio" name="q6" value="0"> 專注力正常</label>
-<label><input type="radio" name="q6" value="1"> 稍微受影響</label>
-<label><input type="radio" name="q6" value="2"> 中度受影響</label>
-<label><input type="radio" name="q6" value="3"> 嚴重受影響</label>
-<label><input type="radio" name="q6" value="4"> 完全無法專注</label>
+<label><input type="radio" name="q6" value="0"> 多久都可以，沒有任何困難</label>
+<label><input type="radio" name="q6" value="1"> 如果我坐姿勢適當，多久都可以</label>
+<label><input type="radio" name="q6" value="2"> 多久都可以，但會產生額外的痛楚</label>
+<label><input type="radio" name="q6" value="3"> 痛楚使我不願意地提早結束這些活動</label>
+<label><input type="radio" name="q6" value="4"> 痛楚使我根本無法閱讀及看電視</label>
 </td></tr>
 
-<tr><td>7</td><td>工作</td>
+<!-- 7 -->
+<tr><td>7</td><td>工作、家務之類</td>
 <td class="options">
-<label><input type="radio" name="q7" value="0"> 工作不受影響</label>
-<label><input type="radio" name="q7" value="1"> 輕微影響</label>
-<label><input type="radio" name="q7" value="2"> 中度影響</label>
-<label><input type="radio" name="q7" value="3"> 嚴重影響</label>
-<label><input type="radio" name="q7" value="4"> 完全無法工作</label>
+<label><input type="radio" name="q7" value="0"> 我可做平時的工作而不感到額外的痛楚</label>
+<label><input type="radio" name="q7" value="1"> 我可做平時的工作，但這使我感到額外的痛楚</label>
+<label><input type="radio" name="q7" value="2"> 痛楚使我只能做平時工作量的一半或以下</label>
+<label><input type="radio" name="q7" value="3"> 痛楚使我只能做平時工作量的四分之一或以下</label>
+<label><input type="radio" name="q7" value="4"> 痛楚使我根本無法工作</label>
 </td></tr>
 
-<tr><td>8</td><td>駕駛</td>
+<!-- 8 -->
+<tr><td>8</td><td>社交活動</td>
 <td class="options">
-<label><input type="radio" name="q8" value="0"> 駕駛無困難</label>
-<label><input type="radio" name="q8" value="1"> 輕微困難</label>
-<label><input type="radio" name="q8" value="2"> 中度困難</label>
-<label><input type="radio" name="q8" value="3"> 嚴重困難</label>
-<label><input type="radio" name="q8" value="4"> 完全無法駕駛</label>
+<label><input type="radio" name="q8" value="0"> 我可按往生活正常，並不導致額外的痛楚</label>
+<label><input type="radio" name="q8" value="1"> 我的社交生活正常，但會增加痛的程度</label>
+<label><input type="radio" name="q8" value="2"> 痛楚限制了我的社交生活，但我仍可外出活動</label>
+<label><input type="radio" name="q8" value="3"> 痛楚使我的社交生活只能限於居所之內</label>
+<label><input type="radio" name="q8" value="4"> 痛楚使我沒有社交生活</label>
 </td></tr>
 
-<!-- Q9 (OPTIONAL) -->
-<tr><td>9</td><td>睡眠（此題非必填）</td>
+<!-- 9 OPTIONAL -->
+<tr><td>9</td><td>駕駛（如果你健康時也不駕駛的話，不必回答本題）</td>
 <td class="options">
-<label><input type="radio" name="q9" value="0"> 睡眠正常</label>
-<label><input type="radio" name="q9" value="1"> 輕微受影響</label>
-<label><input type="radio" name="q9" value="2"> 中度受影響</label>
-<label><input type="radio" name="q9" value="3"> 嚴重受影響</label>
-<label><input type="radio" name="q9" value="4"> 完全無法入睡</label>
+<label><input type="radio" name="q9" value="0"> 我有需要便可以駕駛，不會感到不適</label>
+<label><input type="radio" name="q9" value="1"> 我有需要可以駕駛，但會感到不適</label>
+<label><input type="radio" name="q9" value="2"> 痛楚使我不能直行駕駛或有時會限制我駕駛</label>
+<label><input type="radio" name="q9" value="3"> 痛楚使我根本無法駕駛</label>
 </td></tr>
 
-<!-- NEW Q10 -->
-<tr><td>10</td><td>社交活動</td>
+<!-- 10 -->
+<tr><td>10</td><td>與上一次回答本問卷時的情況相比，你現在的頸痛：</td>
 <td class="options">
-<label><input type="radio" name="q10" value="0"> 完全不受影響</label>
-<label><input type="radio" name="q10" value="1"> 輕微受影響</label>
-<label><input type="radio" name="q10" value="2"> 中度受影響</label>
-<label><input type="radio" name="q10" value="3"> 嚴重受影響</label>
-<label><input type="radio" name="q10" value="4"> 完全無法參與</label>
+<label><input type="radio" name="q10" value="0"> 好了很多</label>
+<label><input type="radio" name="q10" value="1"> 稍為好了</label>
+<label><input type="radio" name="q10" value="2"> 一樣</label>
+<label><input type="radio" name="q10" value="3"> 稍為差了</label>
+<label><input type="radio" name="q10" value="4"> 差了很多</label>
 </td></tr>
 
 </table>
@@ -147,8 +158,8 @@ function calculateNPQ() {
       }
     }
 
-    if (!answered && i !== 9) {  
-      alert("請完成所有必填題目（第9題除外）");
+    if (!answered && i !== 9) {
+      alert("請完成所有必答題目（第 9 題為非必答）。");
       return;
     }
   }
