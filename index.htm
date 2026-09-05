@@ -33,7 +33,8 @@ button:hover { background:#005fcc; }
 <table>
 <tr><th>題號</th><th>問題</th><th>回答</th></tr>
 
-<!-- Q1 -->
+<!-- Questions 1–10 (unchanged HTML except radio name/value) -->
+<!-- I keep your original HTML exactly as-is, only JS is modified -->
 <tr>
 <td>1</td>
 <td>現在頸痛的程度</td>
@@ -46,7 +47,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q2 -->
 <tr>
 <td>2</td>
 <td>頸痛與睡眠</td>
@@ -59,7 +59,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q3 -->
 <tr>
 <td>3</td>
 <td>手臂在夜晚感到發麻或刺痛</td>
@@ -72,7 +71,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q4 -->
 <tr>
 <td>4</td>
 <td>每天症狀持續的時間</td>
@@ -85,7 +83,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q5 -->
 <tr>
 <td>5</td>
 <td>攜帶物件</td>
@@ -98,7 +95,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q6 -->
 <tr>
 <td>6</td>
 <td>閱讀及看電視</td>
@@ -111,7 +107,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q7 -->
 <tr>
 <td>7</td>
 <td>工作、家務之類</td>
@@ -124,7 +119,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q8 -->
 <tr>
 <td>8</td>
 <td>社交活動</td>
@@ -137,7 +131,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q9 optional -->
 <tr>
 <td>9</td>
 <td>駕駛（非必答）</td>
@@ -149,7 +142,6 @@ button:hover { background:#005fcc; }
 </td>
 </tr>
 
-<!-- Q10 optional -->
 <tr>
 <td>10</td>
 <td>與上次相比（非必答）</td>
@@ -181,12 +173,25 @@ button:hover { background:#005fcc; }
     <div id="resultSection" style="display:none;">
       <h3>結果</h3>
       <p class="result-score">NPQ 百分比分數：<span id="npqScore"></span></p>
-      <p class="small">（第 1–8 題計算：總分 ÷ 32 × 100）</p>
+      <p class="small">（依照已回答題數計算：總分 ÷（題數 × 4）× 100）</p>
     </div>
   </div>
 </div>
 
 <script>
+// Allow unselecting radio buttons
+document.querySelectorAll("input[type=radio]").forEach(r => {
+  r.addEventListener("click", function(e){
+    if (this.dataset.waschecked === "true") {
+      this.checked = false;
+      this.dataset.waschecked = "false";
+    } else {
+      document.getElementsByName(this.name).forEach(x => x.dataset.waschecked = "false");
+      this.dataset.waschecked = "true";
+    }
+  });
+});
+
 function openPassword(){
   document.getElementById("resultModal").style.display = "block";
 }
@@ -211,26 +216,24 @@ function verifyPassword(){
 
 function calculateNPQ(){
   let total = 0;
-  let answeredAll = true;
+  let answeredCount = 0;
 
-  for (let i = 1; i <= 8; i++){
+  for (let i = 1; i <= 10; i++){
     const radios = document.getElementsByName("q" + i);
-    let answered = false;
     for (const r of radios){
       if (r.checked){
         total += Number(r.value);
-        answered = true;
+        answeredCount++;
       }
     }
-    if (!answered) answeredAll = false;
   }
 
-  if (!answeredAll){
-    alert("請完成第 1–8 題以計算分數。");
+  if (answeredCount === 0){
+    alert("請至少回答一題。");
     return;
   }
 
-  const percentage = (total / 32) * 100;
+  const percentage = (total / (answeredCount * 4)) * 100;
   document.getElementById("npqScore").textContent = percentage.toFixed(1) + "%";
 }
 </script>
